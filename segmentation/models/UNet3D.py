@@ -19,7 +19,7 @@ class DoubleConv(nn.Module):
             nn.ReLU(True)
         ]
 
-        # 构造序列器
+
         self.double_conv = nn.Sequential(*layers)
 
     def forward(self, x):
