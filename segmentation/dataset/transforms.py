@@ -14,7 +14,7 @@ from batchgenerators.augmentations.crop_and_pad_augmentations import random_crop
 from batchgenerators.augmentations.crop_and_pad_augmentations import center_crop as center_crop_aug
 #----------------------data augment-------------------------------------------
 
-class RandomCrop:#简版搭配用
+class RandomCrop:
     def __init__(self, slices, inputshape):
         self.slices = slices
         self.inputshape = inputshape
@@ -95,7 +95,7 @@ class Spacial_simple:
         random_crop = False
         patch_size = self.patch_size
 
-        dim = len(patch_size)  # 3维
+        dim = len(patch_size)  
 
         patch_center_dist_from_border = dim * [patch_center_dist_from_border]
         data_result = np.zeros((data.shape[0], data.shape[1], patch_size[0], patch_size[1], patch_size[2]),
