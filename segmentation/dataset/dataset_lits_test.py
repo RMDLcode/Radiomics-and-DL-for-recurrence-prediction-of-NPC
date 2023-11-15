@@ -122,11 +122,7 @@ class Img_DataSet(Dataset):
 def Test_Datasets(dataset_path, args):
     data_list = sorted(glob(os.path.join(dataset_path, 'mr/*')))
     label_list = sorted(glob(os.path.join(dataset_path, 'label/*'))) 
-    # radiomics_list = sorted(glob(os.path.join(dataset_path, 'radiomics_norm/*')))
     print("The number of test samples is: ", len(data_list))
     for datapath, labelpath in zip(data_list, label_list):
         print("\nStart Evaluate: ", datapath)
         yield Img_DataSet(datapath, labelpath, args=args), datapath.split('-')[-1]
-    # for datapath, labelpath, radiomicspath in zip(data_list, label_list, radiomics_list):
-    #     print("\nStart Evaluate: ", datapath)
-    #     yield Img_DataSet(datapath, labelpath, radiomicspath, args=args), datapath.split('-')[-1]
